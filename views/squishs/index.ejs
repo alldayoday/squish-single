@@ -1,0 +1,13 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Squishes</h1>
+	<ul>
+  <% squishs.forEach(squish => { %>
+    <li> <%=squish.name %> <br> <%= squish.desc %></li>
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
