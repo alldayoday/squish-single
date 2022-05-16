@@ -3,11 +3,22 @@
 
 <section>
   <h1>Squishes</h1>
-	<ul>
+    <div id='squishList' class="row">
   <% squishs.forEach(squish => { %>
-    <li> <%=squish.name %> <br> <%= squish.desc %></li>
+  <div class="card squishCard" style="width: 38rem;">
+    <img src="<%=squish.img.includes('revision') ? squish.img.split('revision')[0] : "https://squishmallows.com/wp-content/uploads/2018/07/Wheel-of-Sqush-scaled-1.jpg"%>" class="card-img-top" alt="squishmallow" width="100%">
+    <div class="card-body">
+      <h3 class="card-title"><%=squish.name %></h3>
+      <p class="card-text"><%= squish.desc === "to come" ? "We don't know much about this friend yet" : squish.desc %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%=squish.categories.join(" ✨ ")%></li>
+      <li class="list-group-item"><%=squish.sizes.join(" ✨ ")%></li>
+    </ul>
+      <a href="/squishs/<%= squish._id %>" class="btn squish-btn">View</a>
+  </div>
   <% }) %>
-  </ul>
+    </div>
 </section>
 
 <%- include('../partials/footer') %>

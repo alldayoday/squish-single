@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1><%=squish.name%></h1>
+    <img src="<%=squish.img.includes('revision') ? squish.img.split('revision')[0] : "https://squishmallows.com/wp-content/uploads/2018/07/Wheel-of-Sqush-scaled-1.jpg"%>" alt="squishmallow" width="500px">
+      <h3><%= squish.desc %></h3>
+    <ul>
+      <li><%=squish.categories.join(" ✨ ")%></li>
+      <li><%=squish.sizes.join(" ✨ ")%></li>
+    </ul>
+      <a href="/squishs">
+        <p>Back</p>
+      </a>
+</section>
+
+<%- include('../partials/footer') %>
