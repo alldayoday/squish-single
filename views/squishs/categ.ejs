@@ -5,8 +5,9 @@
   <h1>Squishes</h1>
     <div id='squishList' class="row">
   <% squishs.forEach(squish => { %>
+    <% if (squish.categories.includes('Octopus')) {%>
   <div class="card squishCard" style="width: 40rem;">
-    <img src="<%=squish.img.includes('revision') ? squish.img.split('revision')[0] : "https://pbs.twimg.com/media/DDbNBvsXoAEtQSP?format=jpg&name=large"%>" class="card-img-top" alt="squishmallow" width="100%">
+    <img src="<%=squish.img.includes('revision') ? squish.img.split('revision')[0] : "https://squishmallows.com/wp-content/uploads/2018/07/Wheel-of-Sqush-scaled-1.jpg"%>" class="card-img-top" alt="squishmallow" width="100%">
     <div class="card-body">
       <h3 class="card-title"><%=squish.name %></h3>
     </div>
@@ -16,7 +17,7 @@
     </ul>
       <a href="/squishs/<%= squish._id %>" class="btn squish-btn">View</a>
   </div>
-  <% }) %>
+  <% }}) %>
     </div>
 </section>
 

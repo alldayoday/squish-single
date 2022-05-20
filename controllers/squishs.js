@@ -14,6 +14,27 @@ function index(req, res) {
   })
 }
 
+function checkData(req,res){
+  Squish.find({})
+  .then(squishs => {
+    console.log(squishs.forEach(squish => squish.name))
+  })
+}
+
+function octo(req, res) {
+  Squish.find({})
+  .then(squishs => {
+    res.render('squishs/categ', {
+      squishs,
+      title: "squishhh"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.json(err)
+  })
+}
+
 // function index(req, res) {
 //   Squish.find({})
 //   .then(squishs => {
@@ -80,4 +101,5 @@ export {
   show,
   update,
   deleteSquish as delete,
+  octo,
 }

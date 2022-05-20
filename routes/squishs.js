@@ -5,6 +5,7 @@ const router = Router()
 import * as squishCtrl from '../controllers/squishs.js'
 
 router.get('/', squishCtrl.index)
+router.get('/octopus', squishCtrl.octo)
 router.post('/', squishCtrl.create)
 router.get('/:id', squishCtrl.show)
 router.put('/:id', squishCtrl.update)
